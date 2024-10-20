@@ -1,7 +1,10 @@
 const express=require('express');
+var cors = require('cors');
+const path = require('path'); //------
 const app=express();
 
 app.use(express.json());
+app.use(cors());
 
 app.post("/api/requerimiento",(req,res)=>{
     console.log(req.body);
@@ -11,6 +14,12 @@ app.post("/api/requerimiento",(req,res)=>{
 app.get("/api/numero/:numero",(req,res)=>{
     console.log(req.params.numero);
     res.json({mensaje:"oki"});
+});
+
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(3000, (error)=>{

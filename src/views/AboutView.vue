@@ -1,15 +1,14 @@
+<script setup>
+    import axios from 'axios'
+    const fetch=async ()=>{
+        try{
+            const response = await axios.get('http://localhost:3000/api/numero/10')
+            console.log(response)
+        }catch (error) {
+            console.log(error)
+        }
+    }
+</script>
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+    <button @click="fetch()">prueba</button>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
