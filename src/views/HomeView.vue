@@ -1,30 +1,15 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-
-let columnasUsuarios=[
-    'usuario', 
-    'nombre completo', 
-    'direccion'
-]
-
-let columnasComida=[
-    'platillo', 
-    'porciones',
-    'precio',
-    'estrellas'
-]
-
+    import '../assets/boton.css'
+    import '../assets/style.css'
+    import { insertFetch } from '@/utils/utils';
+    let name='';
+    let job='';
 </script>
 <template>
-    <!-- usuarios -->
-    <TheWelcome 
-        titulo="Tabla de usuarios"
-        :columnas="columnasUsuarios"
-    />
-
-    <!-- comida -->
-    <TheWelcome 
-        titulo="Tabla de comida"
-        :columnas="columnasComida"
-    />
+    <img src="../assets/img/mishito.jpg" class="tamanio"/><br>
+    text
+    <input v-model="name"/><input v-model="job"/>
+    <button @click="insertFetch({name:name, job:job});" id="miboton">insertar</button>
+    <!-- <button onclick="getLastIndex()">prueb</button><br>
+    <button onclick="sendNotification()">push</button> -->
 </template>
