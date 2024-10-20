@@ -8,6 +8,26 @@
             console.log(error)
         }
     }
+
+    /* const fetch=async ()=>{
+        try{
+            const options={
+                url:'https://reqres.in/api/users',
+                method:'POST',
+                headers:{
+                    'Content-Type': 'application/json',
+                },
+                data:{
+                    name: "morpheus",
+                    job: "leader"
+                }
+            }
+            const response = await axios.request(options)
+            console.log(response)
+        }catch (error) {
+            console.log(error)
+        }
+    } */
 </script>
 <template>
     <button @click="fetch()">prueba</button>
